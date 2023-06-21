@@ -62,6 +62,7 @@ I created an Employee class with Events to store employees and events and added 
 Because of its thread-safe functionality, I used the Bill Pugh Singleton design pattern in the EmployeeManager class.
 In the PayrollProcessingSystem class, I added a couple of methods to print the required questions on the console.
 you can see the Factory DP implementation under parser folder. 
-### run application as follows:
+
+run the application as follows:
 There is Employees.txt file under resources/static folder.
 you can add data to it and test all the methods in Main class.
