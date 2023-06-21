@@ -45,7 +45,7 @@ public class PayrollProcessingSystemTest {
 
     @Test
     void loadEmployeesByValidFile_CallEmployeeManager() {
-        String file = "src\\test\\resources\\Employees.txt";
+        String file = "src\\main\\resources\\static\\Employees.txt";
         String absolutePath = new File(file).getAbsolutePath();
         payrollProcessingSystem.loadEmployeesByFile(absolutePath);
         verify(employeeManager, times(3)).addEmployee(any(EmployeeDto.class));

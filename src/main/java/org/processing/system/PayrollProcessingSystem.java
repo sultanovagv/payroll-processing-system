@@ -36,8 +36,8 @@ public class PayrollProcessingSystem {
                         .anyMatch(date -> date.getMonthValue() == month && date.getYear() == year))
                 .collect(Collectors.toList());
         employees.forEach(employee ->
-                System.out.println(employee.getEmpId() + " " + employee.getDesignation() +
-                        " " + employee.getFirstName() + " " + employee.getLastName()));
+                System.out.println("empId: " + employee.getEmpId() + "designation: " + employee.getDesignation() +
+                        " firstName: " + employee.getFirstName() + " lastName: " + employee.getLastName()));
     }
 
     public void printMonthlyQuitEmployeesByMonthAndYear(int month, int year) {
@@ -48,7 +48,7 @@ public class PayrollProcessingSystem {
                         .anyMatch(date -> date.getMonthValue() == month && date.getYear() == year))
                 .collect(Collectors.toList());
         employees.forEach(employee ->
-                System.out.println(employee.getEmpId() + " " + employee.getFirstName() + " " + employee.getLastName()));
+                System.out.println("empId: " + employee.getEmpId() + "firstName: " + employee.getFirstName() + "lastName " + employee.getLastName()));
     }
 
     public void printEmployeeWiseReport() {
@@ -62,7 +62,8 @@ public class PayrollProcessingSystem {
                             .map(Event::getValue)
                             .mapToInt(Integer::valueOf)
                             .sum();
-                    System.out.println(employee.getEmpId() + " " + employee.getFirstName() + " " + employee.getLastName() + " " + sum);
+                    System.out.println("empId: " + employee.getEmpId() + " firstName:" + employee.getFirstName()
+                            + "lastName: " + employee.getLastName() + " total amount paid: " + sum);
                 });
     }
 
@@ -80,7 +81,7 @@ public class PayrollProcessingSystem {
                 .flatMap(employee -> employee.getEventList().stream())
                 .mapToInt(value -> Integer.parseInt(value.getValue()))
                 .sum();
-        System.out.println(month + " " + employees.size() + " " + totalAmount);
+        System.out.println("month: " + month + " employees size:  " + employees.size() + " totalAmount: " + totalAmount);
     }
 
     public void printMonthlySalaryReportByMonthAndYear(int month, int year) {
@@ -91,7 +92,7 @@ public class PayrollProcessingSystem {
                 .filter(event -> event.getEventDate().getMonthValue() == month && event.getEventDate().getYear() == year)
                 .mapToInt(event -> Integer.parseInt(event.getValue()))
                 .sum();
-        System.out.println(month + " " + sum + " " + employees.size());
+        System.out.println("month: " + month + " totalSalary: " + sum + " employees size: " + employees.size());
     }
 
 
