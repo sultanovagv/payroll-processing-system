@@ -48,7 +48,7 @@ public class PayrollProcessingSystem {
                         .anyMatch(date -> date.getMonthValue() == month && date.getYear() == year))
                 .collect(Collectors.toList());
         employees.forEach(employee ->
-                System.out.println("empId: " + employee.getEmpId() + "firstName: " + employee.getFirstName() + "lastName " + employee.getLastName()));
+                System.out.println("empId: " + employee.getEmpId() + "firstName: " + employee.getFirstName() + " lastName: " + employee.getLastName()));
     }
 
     public void printEmployeeWiseReport() {
