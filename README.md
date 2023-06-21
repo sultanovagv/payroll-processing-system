@@ -66,3 +66,4 @@ you can see the Factory DP implementation under parser folder.
 run the application as follows:
 There is Employees.txt file under resources/static folder.
 you can add data to it and test all the methods in Main class.
+Ps. Unit tests have been added to the application.
